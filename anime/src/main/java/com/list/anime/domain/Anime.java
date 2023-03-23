@@ -10,16 +10,16 @@ public class Anime {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String animename;
-    private String name;
+    private String seasons;
     private int episodes;
 
     public Anime() {
     }
 
-    public Anime(Long id, String animename, String name, int episodes) {
+    public Anime(Long id, String animename, String seasons, int episodes) {
         this.id = id;
         this.animename = animename;
-        this.name = name;
+        this.seasons = seasons;
         this.episodes = episodes;
     }
 
@@ -39,12 +39,12 @@ public class Anime {
         this.animename = animename;
     }
 
-    public String getName() {
-        return name;
+    public String getSeasons() {
+        return seasons;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSeasons(String seasons) {
+        this.seasons = seasons;
     }
 
     public int getEpisodes() {
