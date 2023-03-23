@@ -4,6 +4,44 @@
 <head>
     <meta charset="utf-8" />
     <title>Add new anime</title>
+
+    <style>
+        body {
+            background-color: aliceblue;
+        }
+
+        h1 {
+            background-color: cadetblue;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        input {
+           padding: 10px;
+            border-style: solid;
+            border-width: 3px;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        .first {
+            margin: 10px;
+        }
+
+        .second {
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-size: 15px;
+            border-radius: 15px;
+            background-color: plum;
+        }
+
+    </style>
 </head>
 <body>
 <div align="center">
@@ -13,9 +51,8 @@
         <form action="#" th:action="@{/save}" th:object="${anime}" method="post">
 
 
-            <div alight="left">
+            <div alight="left" class="first">
                 <tr>
-                    <label class="form-label" >Anime Name</label>
                     <td>
                         <input type="hidden" th:field="*{id}" />
                         <input type="text" th:field="*{animename}" class="form-control" placeholder="Anime Name" />
@@ -23,16 +60,14 @@
                 </tr>
             </div>
 
-            <div alight="left">
+            <div alight="left" class="second">
 
                 <tr>
-                    <label class="form-label" >Seasons</label>
                     <td><input type="text" th:field="*{seasons}" class="form-control" placeholder="Seasons" /></td>
                 </tr>
             </div>
             <div alight="left">
                 <tr>
-                    <label class="form-label" >Episodes</label>
                     <td><input type="text" th:field="*{episodes}" class="form-control" placeholder="Episodes" /></td>
                 </tr>
             </div>
