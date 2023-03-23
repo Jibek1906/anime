@@ -22,10 +22,10 @@ private AnimeListServer service;
         return "index";
     }
 
-    @GetMapping("/new")
+    @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("anime", new Anime());
-        return "new";
+        return "add";
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
