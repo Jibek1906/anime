@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Add new anime</title>
+</head>
+<body>
+<div align="center">
+    <h1>Add new anime</h1>
+    <br />
+    <div class="col-sm-4">
+        <form action="#" th:action="@{/save}" th:object="${anime}" method="post">
+
+
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Anime Name</label>
+                    <td>
+                        <input type="hidden" th:field="*{id}" />
+                        <input type="text" th:field="*{animename}" class="form-control" placeholder="Anime Name" />
+                    </td>
+                </tr>
+            </div>
+
+            <div alight="left">
+
+                <tr>
+                    <label class="form-label" >Seasons</label>
+                    <td><input type="text" th:field="*{seasons}" class="form-control" placeholder="Seasons" /></td>
+                </tr>
+            </div>
+            <div alight="left">
+                <tr>
+                    <label class="form-label" >Episodes</label>
+                    <td><input type="text" th:field="*{episodes}" class="form-control" placeholder="Episodes" /></td>
+                </tr>
+            </div>
+            <br>
+            <tr>
+                <td colspan="2"><button type="submit" class="btn btn-info">Save</button> </td>
+            </tr>
+            </table>
+        </form>
+    </div>
+    </div>
+</body>
+</html>

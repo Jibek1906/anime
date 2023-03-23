@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <style>
+
+        body {
+            background-color: aliceblue;
+        }
+
+        .up {
+            background-color: plum;
+            border-width: 10px;
+            padding: 100px;
+        }
+
+        .col-sm-5 {
+            padding: 10px;
+            margin: 100px;
+        }
+
+        th {
+            padding: 10px;
+        }
+
+        table {
+            border-spacing: 0px;
+            border-style: solid;
+            border-width: 3px;
+            border-color: black;
+        }
+
+        #add {
+            margin-left: 10px;
+            font-size: 25px;
+        }
+
+        h1 {
+            background-color: cadetblue;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        th {
+            font-size: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-style: solid;
+            border-width: 2px;
+        }
+
+        tr {
+            font-size: 15px;
+            padding-inline-start: 4px;
+        }
+
+        .s {
+            padding-right: 20px;
+        }
+
+        td {
+            border-style: solid;
+            border-width: 2px;
+            font-size: 15px;
+            font-weight: bold;
+            padding-left: 5px;
+        }
+
+        #del {
+            padding-left: 20px;
+        }
+
+        a {
+            color: teal;
+        }
+
+    </style>
+</head>
+<body>
+<div>
+    <div>
+    <h1 >Anime List</h1></div>
+    <tr>
+        <div align = "center"  id="add">
+            <h3><a  th:href="@{'/add'}">Add new</a></h3>
+        </div>
+    </tr>
+    <tr>
+        <div class="col-sm-5" align = "center">
+            <div class="panel-body" align = "center" >
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr class="up">
+                        <th>Anime ID</th>
+                        <th class="name">Anime Name</th>
+                        <th class="s">Seasons</th>
+                        <th>Episodes</th>
+                        <th>Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  th:each="anime : ${listanime}">
+                        <td th:text="${anime.id}">ID</td>
+                        <td th:text="${anime.animename}">Anime Name</td>
+                        <td th:text="${anime.seasons}">Seasons</td>
+                        <td th:text="${anime.episodes}">Episodes</td>
+                        <td>
+                            <a th:href="@{'/delete/' + ${anime.id}}" id="del">Delete</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+    </tr>
+
+    </tbody>
+    </table>
+</div>
+</body>
+</html>
